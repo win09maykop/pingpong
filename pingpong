@@ -2,8 +2,11 @@
 
 #создай окно игры
 window = display.set_mode((700, 500))
-display.set_caption('Ping')
+display.set_caption('Pingpong')
 background = transform.scale(image.load('background.png'), (700, 500))
+ball = transform.scale(image.load('ball.png'), (60, 60))
+rectangle1 = transform.scale(image.load('rectangle.png'), (30, 100))
+rectangle2 = transform.scale(image.load('rectangle.png'), (30, 100))
 #задай фон сцены
 FPS = 60
 clock = time.Clock()
@@ -15,5 +18,8 @@ while game:
             game = False
 
     window.blit(background,(0, 0))
+    window.blit(ball,(320, 400))
+    window.blit(rectangle1,(10, 100))
+    window.blit(rectangle2,(660, 200))
     clock.tick(FPS)
     display.update()
