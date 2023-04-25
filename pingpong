@@ -1,0 +1,19 @@
+ from pygame import *
+
+#создай окно игры
+window = display.set_mode((700, 500))
+display.set_caption('Ping')
+background = transform.scale(image.load('background.png'), (700, 500))
+#задай фон сцены
+FPS = 60
+clock = time.Clock()
+game = True
+while game:
+
+    for e in event.get():
+        if e.type == QUIT:
+            game = False
+
+    window.blit(background,(0, 0))
+    clock.tick(FPS)
+    display.update()
